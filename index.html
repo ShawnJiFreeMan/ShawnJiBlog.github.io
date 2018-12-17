@@ -196,9 +196,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="title-iOS真后台方法记录"><a href="#title-iOS真后台方法记录" class="headerlink" title="title: iOS真后台方法记录"></a>title: iOS真后台方法记录</h1><hr>
-<h2 id="播放无声的音乐达到真后台的效果"><a href="#播放无声的音乐达到真后台的效果" class="headerlink" title="播放无声的音乐达到真后台的效果"></a>播放无声的音乐达到真后台的效果</h2><hr>
-<h3 id="创建一个单例用于执行真后台任务"><a href="#创建一个单例用于执行真后台任务" class="headerlink" title="创建一个单例用于执行真后台任务"></a>创建一个单例用于执行真后台任务</h3><ul>
+        <h1 id="iOS真后台方法记录"><a href="#iOS真后台方法记录" class="headerlink" title="iOS真后台方法记录"></a>iOS真后台方法记录</h1><hr>
+<h2 id="实现方式-播放无声的音乐达到真后台的效果"><a href="#实现方式-播放无声的音乐达到真后台的效果" class="headerlink" title="实现方式:播放无声的音乐达到真后台的效果"></a>实现方式:播放无声的音乐达到真后台的效果</h2><h3 id="创建一个单例用于执行真后台任务"><a href="#创建一个单例用于执行真后台任务" class="headerlink" title="创建一个单例用于执行真后台任务"></a>创建一个单例用于执行真后台任务</h3><ul>
 <li><p>LLRedEnvelopesMgr.h</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@interface LLRedEnvelopesMgr : NSObject</span><br><span class="line">@property (nonatomic, assign) UIBackgroundTaskIdentifier bgTaskIdentifier; //后台任务标识符</span><br><span class="line">@property (nonatomic, strong) NSTimer *bgTaskTimer; //后台任务定时器</span><br><span class="line">@property (nonatomic, strong) AVAudioPlayer *blankPlayer; //无声音频播放器</span><br><span class="line">+ (LLRedEnvelopesMgr *)shared;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 </li>
