@@ -136,16 +136,6 @@
                             <div class="ribbon"></div>
                         </div>
                         
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
                         
                     </div>
                 </div>
@@ -155,10 +145,6 @@
                         <li>菜单</li>
                         <li>标签</li>
                         
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -170,15 +156,9 @@
                     <nav class="header-menu">
                         <ul>
                         
+                            <li><a href="/archives/">主页</a></li>
+                        
                             <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/categories/开发工具/">玩转开发工具</a></li>
-                        
-                            <li><a href="/categories/digital">玩转数码</a></li>
-                        
-                            <li><a href="/categories/algorithm">算法学习</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
                         
                         </ul>
                     </nav>
@@ -202,24 +182,6 @@
                 </section>
                 
                 
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
-                    
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
-                    
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
-                </section>
                 
             </div>
         </div>
@@ -249,15 +211,9 @@
             <nav class="header-menu">
                 <ul>
                 
+                    <li><a href="/archives/">主页</a></li>
+                
                     <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
-                
-                    <li><a href="/categories/digital">玩转数码</a></li>
-                
-                    <li><a href="/categories/algorithm">算法学习</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -364,7 +320,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="实现方式-播放无声的音乐达到真后台的效果"><a href="#实现方式-播放无声的音乐达到真后台的效果" class="headerlink" title="实现方式:播放无声的音乐达到真后台的效果"></a>实现方式:播放无声的音乐达到真后台的效果</h2><h3 id="创建一个单例用于执行真后台任务"><a href="#创建一个单例用于执行真后台任务" class="headerlink" title="创建一个单例用于执行真后台任务"></a>创建一个单例用于执行真后台任务</h3><ul>
+        <a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="实现方式-播放无声的音乐达到真后台的效果"><a href="#实现方式-播放无声的音乐达到真后台的效果" class="headerlink" title="实现方式:播放无声的音乐达到真后台的效果"></a>实现方式:播放无声的音乐达到真后台的效果</h2><h3 id="创建一个单例用于执行真后台任务"><a href="#创建一个单例用于执行真后台任务" class="headerlink" title="创建一个单例用于执行真后台任务"></a>创建一个单例用于执行真后台任务</h3><ul>
 <li><p>LLRedEnvelopesMgr.h</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@interface LLRedEnvelopesMgr : NSObject</span><br><span class="line">@property (nonatomic, assign) UIBackgroundTaskIdentifier bgTaskIdentifier; //后台任务标识符</span><br><span class="line">@property (nonatomic, strong) NSTimer *bgTaskTimer; //后台任务定时器</span><br><span class="line">@property (nonatomic, strong) AVAudioPlayer *blankPlayer; //无声音频播放器</span><br><span class="line">+ (LLRedEnvelopesMgr *)shared;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 </li>
@@ -374,7 +333,7 @@
 </ul>
 <h3 id="在AppDelegate中实现"><a href="#在AppDelegate中实现" class="headerlink" title="在AppDelegate中实现"></a>在AppDelegate中实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">UIBackgroundTaskIdentifier _backIden;</span><br><span class="line">NSTimer *_mTimer;</span><br><span class="line">NSInteger _count;</span><br><span class="line"></span><br><span class="line">- (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2</span><br><span class="line">&#123;</span><br><span class="line">   NSLog(@&quot;运行完毕 ☢️☢️☢️☢️☢️☢️☢️☢️☢️☢️☢️！&quot;);</span><br><span class="line">    _count=0;</span><br><span class="line">    return %orig;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)applicationDidEnterBackground:(id)arg1</span><br><span class="line">&#123;</span><br><span class="line">    %orig;</span><br><span class="line"></span><br><span class="line">    [[LLRedEnvelopesMgr shared] enterBackgroundHandler];</span><br><span class="line">    NSLog(@&quot;进入后台&quot;);</span><br><span class="line">    _mTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countAction) userInfo:nil repeats:YES];</span><br><span class="line">    [[NSRunLoop currentRunLoop] addTimer:_mTimer forMode:NSRunLoopCommonModes];</span><br><span class="line">    [self beginTask];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)applicationWillEnterForeground:(id)arg1</span><br><span class="line">&#123;</span><br><span class="line">    %orig;</span><br><span class="line">    NSLog(@&quot;进入前台&quot;);</span><br><span class="line">    [self endBack];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">%new</span><br><span class="line">//计时</span><br><span class="line">-(void)countAction&#123;</span><br><span class="line">  NSLog(@&quot;(真后台运行)---%li&quot;,(long)_count++);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">%new</span><br><span class="line">//申请后台</span><br><span class="line">-(void)beginTask</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;begin&quot;);</span><br><span class="line">    _backIden = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^&#123;</span><br><span class="line">    // 注销后台</span><br><span class="line">    NSLog(@&quot;将要挂起&quot;);</span><br><span class="line">    [self endBack];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">%new</span><br><span class="line">//注销后台</span><br><span class="line">-(void)endBack</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;end&quot;);</span><br><span class="line">    if(_mTimer) &#123;[_mTimer invalidate]; _mTimer = nil; &#125;</span><br><span class="line">    [[UIApplication sharedApplication] endBackgroundTask:_backIden];</span><br><span class="line">    _backIden = UIBackgroundTaskInvalid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">%end</span><br></pre></td></tr></table></figure>
 <h2 id="更新时间"><a href="#更新时间" class="headerlink" title="更新时间"></a><strong>更新时间</strong></h2><p>updata: 2018 - 12 -17  </p>
-
+</the>
       
     </div>
     
