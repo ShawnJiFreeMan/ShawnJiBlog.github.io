@@ -15,11 +15,11 @@
 <meta name="keywords" content="iOS逆向">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS微信红包转发研究">
-<meta property="og:url" content="https://shawnjifreeman.github.io/2018/12/19/iOS微信红包转发研究/index.html">
+<meta property="og:url" content="https://shawnjifreeman.github.io/2018/12/20/iOS逆向开发方法合集/index.html">
 <meta property="og:site_name" content="の小记开发随笔">
 <meta property="og:description" content="iOS微信红包转发研究：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-20T06:37:08.438Z">
+<meta property="og:updated_time" content="2018-12-20T08:41:27.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS微信红包转发研究">
 <meta name="twitter:description" content="iOS微信红包转发研究：">
@@ -174,11 +174,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-iOS微信红包转发研究" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-iOS逆向开发方法合集" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/19/iOS微信红包转发研究/" class="article-date">
-  	<time datetime="2018-12-19T05:32:11.859Z" itemprop="datePublished">2018-12-19</time>
+      <a href="/2018/12/20/iOS逆向开发方法合集/" class="article-date">
+  	<time datetime="2018-12-20T08:22:14.562Z" itemprop="datePublished">2018-12-20</time>
 </a>
     </div>
   
@@ -218,7 +218,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong> iOS微信红包转发研究：</strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
-<h3 id="给微信增加手动转发红包功能"><a href="#给微信增加手动转发红包功能" class="headerlink" title="给微信增加手动转发红包功能"></a>给微信增加手动转发红包功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">%hook WCRedEnvelopesLogicMgr</span><br><span class="line">- (void)OnWCToHongbaoCommonResponse:(id)arg1 Request:(id)arg2&#123;</span><br><span class="line">    NSData *buffer = [[arg1 retText] buffer];</span><br><span class="line">    NSString *str = [[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding];</span><br><span class="line">    str = [str stringByReplacingOccurrencesOfString:@&quot;\&quot;canShare\&quot;:0,&quot; withString:@&quot;\&quot;canShare\&quot;:1,&quot;];</span><br><span class="line">    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];</span><br><span class="line">    [[arg1 retText] setBuffer:data];</span><br><span class="line">    %orig;</span><br><span class="line">&#125;</span><br><span class="line">%end</span><br></pre></td></tr></table></figure>
+<h2 id="iOS逆向开发方法合集"><a href="#iOS逆向开发方法合集" class="headerlink" title="iOS逆向开发方法合集"></a>iOS逆向开发方法合集</h2><h4 id="获取对象类型-描述："><a href="#获取对象类型-描述：" class="headerlink" title="获取对象类型/描述："></a>获取对象类型/描述：</h4><ul>
+<li>类型:<code>object_getClassName(对象) NSLog输出:%s</code></li>
+<li>描述:<code>[对象 description] NSLog输出:%@</code></li>
+</ul>
+<h4 id="获取私有变量"><a href="#获取私有变量" class="headerlink" title="获取私有变量:"></a>获取私有变量:</h4><h5 id="格式：类型-变量名-MSHookIvar-lt-类型-gt-self-“私有变量”"><a href="#格式：类型-变量名-MSHookIvar-lt-类型-gt-self-“私有变量”" class="headerlink" title="格式：类型  变量名 = MSHookIvar&lt;类型&gt;(self, “私有变量”);"></a>格式：类型  变量名 = MSHookIvar&lt;类型&gt;(self, “私有变量”);</h5><p>​           <code>如：id data = MSHookIvar&lt;id&gt;(self, &quot;m_data&quot;);</code></p>
+<h5 id="给私有变量赋值-setValue-forkey"><a href="#给私有变量赋值-setValue-forkey" class="headerlink" title="给私有变量赋值: setValue forkey"></a>给私有变量赋值: setValue forkey</h5><p>​           <code>如:[data setValue:@&quot;&quot; forkey:@&quot;&quot;]</code></p>
+<h4 id="动态库注入"><a href="#动态库注入" class="headerlink" title="动态库注入:"></a>动态库注入:</h4><p>  <code>insert_dylib @executable_path/动态库.dylib app可执行文件的绝对路径</code></p>
+<h4 id="APP重签名瘦身"><a href="#APP重签名瘦身" class="headerlink" title="APP重签名瘦身:"></a>APP重签名瘦身:</h4><p><code>lipo -remove armv7 xxx.app/xxx -o xxx.app/xxx</code></p>
+<h4 id="动态库作用所以app包括分身"><a href="#动态库作用所以app包括分身" class="headerlink" title="动态库作用所以app包括分身:"></a>动态库作用所以app包括分身:</h4><p>在动态库项目的plist文件中添加:Executables(Array)-App名称(String)</p>
+<p>​        结构:  – Filter        —Dictionary</p>
+<p>​                      –Executables     —Array</p>
+<p>​                        –item0              —string     app名称</p>
+<p>​                      –Bundles           —Array</p>
+<h4 id="导出APP头文件"><a href="#导出APP头文件" class="headerlink" title="导出APP头文件:"></a>导出APP头文件:</h4><p> <code>class-dump -H xxx.app -o xxx</code></p>
 
       
     </div>
@@ -228,18 +241,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/12/20/iOS逆向开发方法合集/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          iOS微信红包转发研究
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/16/iOS真后台实现方法记录/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS真后台实现方法记录</div>
+    <a href="/2018/12/19/iOS微信红包转发研究/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS微信红包转发研究</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
