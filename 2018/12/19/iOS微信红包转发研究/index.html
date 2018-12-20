@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="の小记开发随笔">
 <meta property="og:description" content="iOS微信红包转发研究：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-20T06:31:43.639Z">
+<meta property="og:updated_time" content="2018-12-20T06:37:08.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS微信红包转发研究">
 <meta name="twitter:description" content="iOS微信红包转发研究：">
@@ -215,9 +215,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> iOS微信红包转发研究：</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
-<a id="more"></a>
-<hr>
+        <p><strong> iOS微信红包转发研究：</strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
 <h3 id="给微信增加手动转发红包功能"><a href="#给微信增加手动转发红包功能" class="headerlink" title="给微信增加手动转发红包功能"></a>给微信增加手动转发红包功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">%hook WCRedEnvelopesLogicMgr</span><br><span class="line">- (void)OnWCToHongbaoCommonResponse:(id)arg1 Request:(id)arg2&#123;</span><br><span class="line">    NSData *buffer = [[arg1 retText] buffer];</span><br><span class="line">    NSString *str = [[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding];</span><br><span class="line">    str = [str stringByReplacingOccurrencesOfString:@&quot;\&quot;canShare\&quot;:0,&quot; withString:@&quot;\&quot;canShare\&quot;:1,&quot;];</span><br><span class="line">    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];</span><br><span class="line">    [[arg1 retText] setBuffer:data];</span><br><span class="line">    %orig;</span><br><span class="line">&#125;</span><br><span class="line">%end</span><br></pre></td></tr></table></figure>
 
       
