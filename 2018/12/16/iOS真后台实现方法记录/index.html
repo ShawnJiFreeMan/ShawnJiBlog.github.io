@@ -11,18 +11,18 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="播放无声的音乐达到真后台的效果创建一个单例用于执行真后台任务 LLRedEnvelopesMgr.h 12345678910#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;AVFoundation/AVFoundation.h&amp;gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;@interface LLRedEnvelopesM">
+  <meta name="description" content="播放无声的音乐达到真后台的效果创建一个单例用于执行真后台任务 LLRedEnvelopesMgr.h 12345678910#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;AVFoundation/AVFoundation.h&amp;gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;@interface LLRedEnvelopes">
 <meta name="keywords" content="iOS前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS真后台实现方法记录">
 <meta property="og:url" content="https://shawnjifreeman.github.io/2018/12/16/iOS真后台实现方法记录/index.html">
 <meta property="og:site_name" content="の小记开发随笔">
-<meta property="og:description" content="播放无声的音乐达到真后台的效果创建一个单例用于执行真后台任务 LLRedEnvelopesMgr.h 12345678910#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;AVFoundation/AVFoundation.h&amp;gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;@interface LLRedEnvelopesM">
+<meta property="og:description" content="播放无声的音乐达到真后台的效果创建一个单例用于执行真后台任务 LLRedEnvelopesMgr.h 12345678910#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;AVFoundation/AVFoundation.h&amp;gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;@interface LLRedEnvelopes">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-20T06:20:45.239Z">
+<meta property="og:updated_time" content="2018-12-20T06:24:45.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS真后台实现方法记录">
-<meta name="twitter:description" content="播放无声的音乐达到真后台的效果创建一个单例用于执行真后台任务 LLRedEnvelopesMgr.h 12345678910#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;AVFoundation/AVFoundation.h&amp;gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;@interface LLRedEnvelopesM">
+<meta name="twitter:description" content="播放无声的音乐达到真后台的效果创建一个单例用于执行真后台任务 LLRedEnvelopesMgr.h 12345678910#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;AVFoundation/AVFoundation.h&amp;gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;@interface LLRedEnvelopes">
   
     <link rel="alternative" href="/atom.xml" title="の小记开发随笔" type="application/atom+xml">
   
@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/iOS前端/" style="font-size: 10px;">iOS前端</a>
+						<a href="/tags/iOS前端/" style="font-size: 10px;">iOS前端</a> <a href="/tags/iOS逆向/" style="font-size: 10px;">iOS逆向</a>
 					</div>
 				</section>
 				
@@ -216,6 +216,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
+<hr>
 <h2 id="播放无声的音乐达到真后台的效果"><a href="#播放无声的音乐达到真后台的效果" class="headerlink" title="播放无声的音乐达到真后台的效果"></a>播放无声的音乐达到真后台的效果</h2><h3 id="创建一个单例用于执行真后台任务"><a href="#创建一个单例用于执行真后台任务" class="headerlink" title="创建一个单例用于执行真后台任务"></a>创建一个单例用于执行真后台任务</h3><ul>
 <li><p>LLRedEnvelopesMgr.h</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@interface LLRedEnvelopesMgr : NSObject</span><br><span class="line">@property (nonatomic, assign) UIBackgroundTaskIdentifier bgTaskIdentifier; //后台任务标识符</span><br><span class="line">@property (nonatomic, strong) NSTimer *bgTaskTimer; //后台任务定时器</span><br><span class="line">@property (nonatomic, strong) AVAudioPlayer *blankPlayer; //无声音频播放器</span><br><span class="line">+ (LLRedEnvelopesMgr *)shared;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
@@ -232,6 +233,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2018/12/19/iOS微信红包转发研究/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          iOS微信红包转发研究
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
