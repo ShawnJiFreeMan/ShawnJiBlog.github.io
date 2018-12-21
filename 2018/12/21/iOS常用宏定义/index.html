@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>iOS逆向-iOS常用宏定义 | の小记开发随笔</title>
+
+  <!-- keywords -->
+  
+    <meta name="keywords" content="iOS逆向">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS常用宏定义：">
+<meta name="keywords" content="iOS宏定义">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS常用宏定义">
+<meta property="og:url" content="https://shawnjifreeman.github.io/2018/12/21/iOS常用宏定义/index.html">
+<meta property="og:site_name" content="の小记开发随笔">
+<meta property="og:description" content="iOS常用宏定义：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-21T07:49:41.577Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS常用宏定义">
+<meta name="twitter:description" content="iOS常用宏定义：">
+  
+    <link rel="alternative" href="/atom.xml" title="の小记开发随笔" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://wx2.sinaimg.cn/thumb150/006bBRY3ly8fy8nsmfl1pj30cc0cb0tl.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head></html>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://tvax2.sinaimg.cn/crop.23.0.276.276.180/006bBRY3ly8fy8oqccos8j308c07oq35.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">の小记</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">iOS  |  逆向</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ShawnJiFreeMan/" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/iOS前端/" style="font-size: 10px;">iOS前端</a> <a href="/tags/iOS宏定义/" style="font-size: 10px;">iOS宏定义</a> <a href="/tags/iOS逆向方法/" style="font-size: 10px;">iOS逆向方法</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">1832891971@qq.com</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">の小记</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://tvax2.sinaimg.cn/crop.23.0.276.276.180/006bBRY3ly8fy8oqccos8j308c07oq35.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">の小记</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">iOS  |  逆向</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ShawnJiFreeMan/" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-iOS常用宏定义" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/21/iOS常用宏定义/" class="article-date">
+  	<time datetime="2018-12-21T07:29:56.248Z" itemprop="datePublished">2018-12-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS常用宏定义
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS宏定义/">iOS宏定义</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS开发/">iOS开发</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> iOS常用宏定义：</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+<a id="more"></a>
+<h5 id="定义颜色"><a href="#定义颜色" class="headerlink" title="定义颜色:"></a>定义颜色:</h5><p><code>RGB颜色设置:#define SJRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]</code></p>
+<p><code>设置随机颜色:#define LRRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]</code></p>
+<h5 id="字符串处理："><a href="#字符串处理：" class="headerlink" title="字符串处理："></a>字符串处理：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 判断字符串是否为空或者为空字符串</span><br><span class="line">#define STR_Is_NullOrEmpty(str) (str==nil||[str isEqualToString:@&quot;&quot;]||[str isEqualToString:@&quot;(null)&quot;])</span><br><span class="line">//字符串相等</span><br><span class="line">#define STR_Isequal_STR(str1,str2) [str1 isEqualToString:str2]</span><br><span class="line">//判断字符串包含某个字符</span><br><span class="line">#define STR_IS_Range(str1,str2) [str1 rangeOfString:str2].location!=NSNotFound</span><br><span class="line">//字符串移除某一个字符</span><br><span class="line">#define STR_Remove_Char(str1,str2)  [str1 stringByReplacingOccurrencesOfString:str2 withString:@&quot;&quot;]</span><br><span class="line">//字符串拼接</span><br><span class="line">#define STR_Joint_Char(str1,str2)  [str1 stringByAppendingString:str2]</span><br></pre></td></tr></table></figure>
+<h5 id="View设置圆角和边框"><a href="#View设置圆角和边框" class="headerlink" title="View设置圆角和边框:"></a>View设置圆角和边框:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#define ViewBorderRadius(View, Radius, Width, Color)\</span><br><span class="line">        \</span><br><span class="line">        [View.layer setCornerRadius:(Radius)];\</span><br><span class="line">        [View.layer setMasksToBounds:YES];\</span><br><span class="line">        [View.layer setBorderWidth:(Width)];\</span><br><span class="line">        [View.layer setBorderColor:[Color CGColor]]</span><br></pre></td></tr></table></figure>
+<h5 id="设置控件位置-大小"><a href="#设置控件位置-大小" class="headerlink" title="设置控件位置/大小:"></a>设置控件位置/大小:</h5><p><code>#define  RECT_CTR_POINT(id,X,Y,W,H) [id setFrame: CGRectMake(X, Y, W, H)]</code></p>
+<h5 id="设置字体大小"><a href="#设置字体大小" class="headerlink" title="设置字体大小:"></a>设置字体大小:</h5><p><code>#define FONT_SIZE(size)           [UIFont systemFontOfSize:size]</code></p>
+<h5 id="格式化打印"><a href="#格式化打印" class="headerlink" title="格式化打印:"></a>格式化打印:</h5><p><code>#define NSLog(FORMAT, ...) NSLog(@&quot;：[%s:%d] -- %@\n&quot;,[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [NSString stringWithFormat:FORMAT, ##__VA_ARGS__]);</code></p>
+<h5 id="屏幕宽高"><a href="#屏幕宽高" class="headerlink" title="屏幕宽高:"></a>屏幕宽高:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#define SCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width</span><br><span class="line">#define SCREENH_HEIGHT [UIScreen mainScreen].bounds.size.height</span><br></pre></td></tr></table></figure>
+<h5 id="获取通知中心"><a href="#获取通知中心" class="headerlink" title="获取通知中心:"></a>获取通知中心:</h5><p><code>#define LRNotificationCenter [NSNotificationCenter defaultCenter]</code></p>
+<h5 id="由角度转换弧度-由弧度转换角度"><a href="#由角度转换弧度-由弧度转换角度" class="headerlink" title="由角度转换弧度 由弧度转换角度:"></a>由角度转换弧度 由弧度转换角度:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#define LRDegreesToRadian(x) (M_PI * (x) / 180.0)</span><br><span class="line">#define LRRadianToDegrees(radian) (radian*180.0)/(M_PI)</span><br></pre></td></tr></table></figure>
+<h5 id="获取当前语言"><a href="#获取当前语言" class="headerlink" title="获取当前语言:"></a>获取当前语言:</h5><p><code>#define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])</code></p>
+<h5 id="获取系统版本"><a href="#获取系统版本" class="headerlink" title="获取系统版本:"></a>获取系统版本:</h5><p><code>#define IOS_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]</code></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/20/iOS逆向开发方法合集/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS逆向开发方法合集</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2018 の小记
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
