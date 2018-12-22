@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="の小记开发随笔">
 <meta property="og:description" content="iOS常用宏定义：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-21T07:53:31.113Z">
+<meta property="og:updated_time" content="2018-12-22T08:12:31.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS常用宏定义">
 <meta name="twitter:description" content="iOS常用宏定义：">
@@ -231,6 +231,7 @@
 <h5 id="由角度转换弧度-由弧度转换角度"><a href="#由角度转换弧度-由弧度转换角度" class="headerlink" title="由角度转换弧度 由弧度转换角度:"></a>由角度转换弧度 由弧度转换角度:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#define LRDegreesToRadian(x) (M_PI * (x) / 180.0)</span><br><span class="line">#define LRRadianToDegrees(radian) (radian*180.0)/(M_PI)</span><br></pre></td></tr></table></figure>
 <h5 id="获取当前语言"><a href="#获取当前语言" class="headerlink" title="获取当前语言:"></a>获取当前语言:</h5><p><code>#define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])</code></p>
 <h5 id="获取系统版本"><a href="#获取系统版本" class="headerlink" title="获取系统版本:"></a>获取系统版本:</h5><p><code>#define IOS_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]</code></p>
+<h5 id="GCD定时器"><a href="#GCD定时器" class="headerlink" title="GCD定时器:"></a>GCD定时器:</h5><p><code>#define GCD_Timer(delayTime ,onceBlock)  dispatch_after( dispatch_time(DISPATCH_TIME_NOW , delayTime * NSEC_PER_SEC ), dispatch_get_main_queue ( ) , onceBlock);</code></p>
 
       
     </div>
