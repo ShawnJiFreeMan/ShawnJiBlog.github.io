@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="の小记开发随笔">
 <meta property="og:description" content="iOS逆向开发方法合集：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-21T07:21:18.106Z">
+<meta property="og:updated_time" content="2018-12-23T02:19:07.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS逆向开发方法合集">
 <meta name="twitter:description" content="iOS逆向开发方法合集：">
@@ -219,8 +219,7 @@
       
         <p><strong> iOS逆向开发方法合集：</strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
 <h2 id="iOS逆向开发方法合集"><a href="#iOS逆向开发方法合集" class="headerlink" title="iOS逆向开发方法合集"></a>iOS逆向开发方法合集</h2><h4 id="获取对象类型-描述："><a href="#获取对象类型-描述：" class="headerlink" title="获取对象类型/描述："></a>获取对象类型/描述：</h4><ul>
-<li>类型:<code>object_getClassName(对象) NSLog输出:%s</code></li>
-<li>描述:<code>[对象 description] NSLog输出:%@</code></li>
+<li>类型:<figure class="highlight plain"><figcaption><span>NSLog输出:%s ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 描述:``` [对象 description] NSLog输出:%@</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="获取私有变量"><a href="#获取私有变量" class="headerlink" title="获取私有变量:"></a>获取私有变量:</h4><h5 id="格式：类型-变量名-MSHookIvar-lt-类型-gt-self-“私有变量”"><a href="#格式：类型-变量名-MSHookIvar-lt-类型-gt-self-“私有变量”" class="headerlink" title="格式：类型  变量名 = MSHookIvar&lt;类型&gt;(self, “私有变量”);"></a>格式：类型  变量名 = MSHookIvar&lt;类型&gt;(self, “私有变量”);</h5><p>​           <code>如：id data = MSHookIvar&lt;id&gt;(self, &quot;m_data&quot;);</code></p>
 <h5 id="给私有变量赋值-setValue-forkey"><a href="#给私有变量赋值-setValue-forkey" class="headerlink" title="给私有变量赋值: setValue forkey"></a>给私有变量赋值: setValue forkey</h5><p>​           <code>如:[data setValue:@&quot;&quot; forkey:@&quot;&quot;]</code></p>
