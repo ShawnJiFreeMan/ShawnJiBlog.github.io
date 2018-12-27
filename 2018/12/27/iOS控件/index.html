@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>iOS逆向-iOS常用方法合集 | の小记开发随笔</title>
+  <title>iOS逆向-iOS控件 | の小记开发随笔</title>
 
   <!-- keywords -->
   
@@ -11,18 +11,18 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS常用方法合集：">
-<meta name="keywords" content="iOS常用方法">
+  <meta name="description" content="iOS控件：">
+<meta name="keywords" content="iOS控件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS常用方法合集">
-<meta property="og:url" content="https://shawnjifreeman.github.io/2018/12/22/iOS常用方法合集/index.html">
+<meta property="og:title" content="iOS控件">
+<meta property="og:url" content="https://shawnjifreeman.github.io/2018/12/27/iOS控件/index.html">
 <meta property="og:site_name" content="の小记开发随笔">
-<meta property="og:description" content="iOS常用方法合集：">
+<meta property="og:description" content="iOS控件：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-26T02:26:14.485Z">
+<meta property="og:updated_time" content="2018-12-27T03:18:45.449Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS常用方法合集">
-<meta name="twitter:description" content="iOS常用方法合集：">
+<meta name="twitter:title" content="iOS控件">
+<meta name="twitter:description" content="iOS控件：">
   
     <link rel="alternative" href="/atom.xml" title="の小记开发随笔" type="application/atom+xml">
   
@@ -174,11 +174,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-iOS常用方法合集" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-iOS控件" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/22/iOS常用方法合集/" class="article-date">
-  	<time datetime="2018-12-22T03:29:03.291Z" itemprop="datePublished">2018-12-22</time>
+      <a href="/2018/12/27/iOS控件/" class="article-date">
+  	<time datetime="2018-12-27T02:51:19.908Z" itemprop="datePublished">2018-12-27</time>
 </a>
     </div>
   
@@ -191,7 +191,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      iOS常用方法合集
+      iOS控件
       
     </h1>
   
@@ -201,7 +201,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS常用方法/">iOS常用方法</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS控件/">iOS控件</a></li></ul>
 	</div>
 
         
@@ -217,11 +217,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> iOS常用方法合集：</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+        <p><strong> iOS控件：</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
 <a id="more"></a>
-<h4 id="文字转语音"><a href="#文字转语音" class="headerlink" title="文字转语音"></a><strong>文字转语音</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 朗读</span><br><span class="line">static inline void readTaiJ(NSString *text) &#123;</span><br><span class="line">    AVSpeechSynthesisVoice *voice = [AVSpeechSynthesisVoice voiceWithLanguage:@&quot;zh-TW&quot;]; //en-US</span><br><span class="line">    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];</span><br><span class="line">    utterance.voice = voice;</span><br><span class="line">    utterance.rate = ([UIDevice currentDevice].systemVersion.doubleValue&gt;=9.0) ? 0.5 : 0.2; //0.4;</span><br><span class="line">    //utterance.pitchMultiplier = 2.0;//语调 0.5-2.0</span><br><span class="line">    AVSpeechSynthesizer *speechSynthesizer = [[AVSpeechSynthesizer alloc] init];</span><br><span class="line">    [speechSynthesizer speakUtterance:utterance];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="获取当前时间戳-毫秒"><a href="#获取当前时间戳-毫秒" class="headerlink" title="获取当前时间戳(毫秒)"></a><strong>获取当前时间戳(毫秒)</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static inline NSString *getTime() &#123;</span><br><span class="line">    NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];</span><br><span class="line">    NSTimeInterval a=[date timeIntervalSince1970]*1000; // *1000 是精确到毫秒，不乘就是精确到秒</span><br><span class="line">    NSString *timeString = [NSString stringWithFormat:@&quot;%.0f&quot;, a]; //转为字符型</span><br><span class="line">    return timeString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="剪切板赋值"><a href="#剪切板赋值" class="headerlink" title="剪切板赋值"></a><strong>剪切板赋值</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];</span><br><span class="line">pasteboard.string = @&quot;字符串&quot;;</span><br></pre></td></tr></table></figure>
+<h4 id="控件设置阴影-圆角"><a href="#控件设置阴影-圆角" class="headerlink" title="控件设置阴影/圆角:"></a>控件设置阴影/圆角:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];</span><br><span class="line">btn.layer.shadowOffset =  CGSizeMake(1, 1);</span><br><span class="line">btn.layer.shadowOpacity = 0.8;</span><br><span class="line">btn.layer.shadowColor =  [UIColor blackColor].CGColor;</span><br><span class="line">btn.layer.cornerRadius= 40;</span><br></pre></td></tr></table></figure>
+<h4 id="UILabel自动换行"><a href="#UILabel自动换行" class="headerlink" title="UILabel自动换行:"></a>UILabel自动换行:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">label.lineBreakMode = NSLineBreakByWordWrapping;</span><br><span class="line">label.numberOfLines = 0;</span><br></pre></td></tr></table></figure>
+<h4 id="毛玻璃效果"><a href="#毛玻璃效果" class="headerlink" title="毛玻璃效果:"></a>毛玻璃效果:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//显示风格</span><br><span class="line">    typedef NS_ENUM(NSInteger, UIBlurEffectStyle) &#123;</span><br><span class="line">    UIBlurEffectStyleExtraLight,//高亮的风格</span><br><span class="line">    UIBlurEffectStyleLight,//亮化的风格</span><br><span class="line">    UIBlurEffectStyleDark//暗化的风格</span><br><span class="line">    &#125; ;</span><br><span class="line">+ (UIVisualEffectView *)effectViewWithFrame:(CGRect)frame&#123;</span><br><span class="line">    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];</span><br><span class="line">    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];</span><br><span class="line">    effectView.frame = frame;</span><br><span class="line">    return effectView;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="传递事件-判断当前点是否在一个区域内"><a href="#传递事件-判断当前点是否在一个区域内" class="headerlink" title="传递事件,判断当前点是否在一个区域内:"></a>传递事件,判断当前点是否在一个区域内:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event&#123;</span><br><span class="line">    // 1.描述一下按钮上部分的区域</span><br><span class="line">    CGRect rect = CGRectMake(0, 0, self.bounds.size.width, 100);</span><br><span class="line">    // 2.判断当前点击的点在不在上部分(如果不在,就直接返回nil)</span><br><span class="line">    if (!CGRectContainsPoint(rect, point)) &#123; return nil; &#125;</span><br><span class="line">    // 3.继续传递事件</span><br><span class="line">    return [super hitTest:point withEvent:event];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -231,18 +232,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/12/25/Clutch实现iOS系统app砸壳/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          Clutch实现iOS系统app砸壳
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/21/iOS常用宏定义/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS常用宏定义</div>
+    <a href="/2018/12/25/Clutch实现iOS系统app砸壳/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Clutch实现iOS系统app砸壳</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
