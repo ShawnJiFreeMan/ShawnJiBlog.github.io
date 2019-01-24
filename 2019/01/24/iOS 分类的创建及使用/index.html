@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>iOS逆向-iOS分类的特点、创建、使用 | の小记开发随笔</title>
+
+  <!-- keywords -->
+  
+    <meta name="keywords" content="iOS逆向">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS分类的特点、创建、使用：">
+<meta name="keywords" content="iOS分类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS分类的特点、创建、使用">
+<meta property="og:url" content="https://shawnjifreeman.github.io/2019/01/24/iOS 分类的创建及使用/index.html">
+<meta property="og:site_name" content="の小记开发随笔">
+<meta property="og:description" content="iOS分类的特点、创建、使用：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-24T08:59:51.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS分类的特点、创建、使用">
+<meta name="twitter:description" content="iOS分类的特点、创建、使用：">
+  
+    <link rel="alternative" href="/atom.xml" title="の小记开发随笔" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://wx2.sinaimg.cn/thumb150/006bBRY3ly8fy8nsmfl1pj30cc0cb0tl.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head></html>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://tvax4.sinaimg.cn/crop.30.35.530.530.180/006bBRY3ly8fyghyc2mroj30gq0goq3r.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">の小记</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">闻君有白玉美人,当踏月来取。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ShawnJiFreeMan/" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/app脱壳/" style="font-size: 10px;">app脱壳</a> <a href="/tags/iOS分类/" style="font-size: 10px;">iOS分类</a> <a href="/tags/iOS宏定义/" style="font-size: 10px;">iOS宏定义</a> <a href="/tags/iOS常用方法/" style="font-size: 10px;">iOS常用方法</a> <a href="/tags/iOS控件/" style="font-size: 10px;">iOS控件</a> <a href="/tags/iOS真后台/" style="font-size: 10px;">iOS真后台</a> <a href="/tags/iOS逆向方法/" style="font-size: 10px;">iOS逆向方法</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">1832891971@qq.com</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">の小记</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://tvax4.sinaimg.cn/crop.30.35.530.530.180/006bBRY3ly8fyghyc2mroj30gq0goq3r.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">の小记</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">闻君有白玉美人,当踏月来取。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ShawnJiFreeMan/" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-iOS 分类的创建及使用" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/24/iOS 分类的创建及使用/" class="article-date">
+  	<time datetime="2019-01-24T08:41:53.428Z" itemprop="datePublished">2019-01-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS分类的特点、创建、使用
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS分类/">iOS分类</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS开发/">iOS开发</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> iOS分类的特点、创建、使用：</strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+<h3 id="分类的特点"><a href="#分类的特点" class="headerlink" title="分类的特点:"></a>分类的特点:</h3><ul>
+<li>分类是为了扩展系统类的方法而产生的一种方式</li>
+<li>分类的作用就是在不修改原有类的基础上，为一个类扩展方法，最主要的是可以给系统类扩展我们自己定义的方法</li>
+<li>分类中可以访问原来类的成员变量，但只能访问@protect和@public形式的变量</li>
+<li>如果要给分类添加成员变量，则需要写变量的get、set方法，否则添加的成员变量无法被调用</li>
+<li>如果给一个类定义了两个分类，这两个分类中分别实现了同样的一个方法，调用方法时候，这两个方法都会被执行，所以尽量避免这样的情况出现是正解</li>
+<li>使用分类时需引入分类头文件</li>
+</ul>
+<h3 id="分类的创建"><a href="#分类的创建" class="headerlink" title="分类的创建:"></a>分类的创建:</h3><p><u><strong><1> Cmd+N–&gt;Objective-C File–&gt;Next</1></strong></u></p>
+<p><u><strong><2>File Type选择category，class选择需要的类，分类名，Next</2></strong></u></p>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@interface UIView (Frame)</span><br><span class="line"></span><br><span class="line">//添加的成员变量</span><br><span class="line">@property CGFloat origin_x;</span><br><span class="line">@property CGFloat origin_y;</span><br><span class="line"></span><br><span class="line">@property CGFloat width;</span><br><span class="line">@property CGFloat height;</span><br><span class="line"></span><br><span class="line">//扩展的方法</span><br><span class="line">/**</span><br><span class="line">*  @author MX, 16-05-29 15:05:22</span><br><span class="line">*</span><br><span class="line">*  位移（根据center移动）</span><br><span class="line">*</span><br><span class="line">*  @param point</span><br><span class="line">*/</span><br><span class="line">- (void)moveTo:(CGPoint) point;</span><br><span class="line">/**</span><br><span class="line">*  @author MX, 16-05-29 15:05:27</span><br><span class="line">*</span><br><span class="line">*  指定比率放大或者缩小</span><br><span class="line">*</span><br><span class="line">*  @param scale    指定的比率</span><br><span class="line">*/</span><br><span class="line">- (void)scaleBy:(CGFloat) scale;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">#import &quot;UIView+Frame.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation UIView (Frame)</span><br><span class="line"></span><br><span class="line">@dynamic origin_x;</span><br><span class="line">@dynamic origin_y;</span><br><span class="line">@dynamic width;</span><br><span class="line">@dynamic height;</span><br><span class="line"></span><br><span class="line">//实现set、get方法</span><br><span class="line">- (CGFloat)origin_x</span><br><span class="line">&#123;</span><br><span class="line">  return self.frame.origin.x;</span><br><span class="line">&#125;</span><br><span class="line">- (CGFloat)origin_y</span><br><span class="line">&#123;</span><br><span class="line">  return self.frame.origin.y;</span><br><span class="line">&#125;</span><br><span class="line">- (CGFloat)width</span><br><span class="line">&#123;</span><br><span class="line">  return self.frame.size.width;</span><br><span class="line">&#125;</span><br><span class="line">- (CGFloat)height</span><br><span class="line">&#123;</span><br><span class="line">  return self.frame.size.height;</span><br><span class="line">&#125;</span><br><span class="line">- (CGFloat)toLeftMargin</span><br><span class="line">&#123;</span><br><span class="line">  return self.frame.origin.x+self.frame.size.width;</span><br><span class="line">&#125;</span><br><span class="line">- (CGFloat)toTopMargin</span><br><span class="line">&#123;</span><br><span class="line">  return self.frame.origin.y+self.frame.size.height;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (void)setWidth:(CGFloat)width</span><br><span class="line">&#123;</span><br><span class="line">    if (width != self.frame.size.width) &#123;</span><br><span class="line">    CGRect newframe = self.frame;</span><br><span class="line">    newframe.size.width = width;</span><br><span class="line">    self.frame = newframe;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">- (void)setHeight:(CGFloat)height</span><br><span class="line">&#123;</span><br><span class="line">    if (height != self.frame.size.height)</span><br><span class="line">    &#123;</span><br><span class="line">    CGRect newframe = self.frame;</span><br><span class="line">    newframe.size.height = height;</span><br><span class="line">    self.frame = newframe;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">- (void)setOrigin_x:(CGFloat)origin_x</span><br><span class="line">&#123;</span><br><span class="line">    if (origin_x != self.frame.origin.x)</span><br><span class="line">    &#123;</span><br><span class="line">    CGRect newframe = self.frame;</span><br><span class="line">    newframe.origin.x = origin_x;</span><br><span class="line">    self.frame = newframe;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">- (void)setOrigin_y:(CGFloat)origin_y</span><br><span class="line">&#123;</span><br><span class="line">    if (origin_y != self.frame.origin.y)</span><br><span class="line">    &#123;</span><br><span class="line">    CGRect newframe = self.frame;</span><br><span class="line">    newframe.origin.y = origin_y;</span><br><span class="line">    self.frame = newframe;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark 扩展的方法</span><br><span class="line">- (void)moveTo:(CGPoint) point</span><br><span class="line">&#123;</span><br><span class="line">    if ((self.center.x != point.x) || (self.center.y != point.y))</span><br><span class="line">    &#123;</span><br><span class="line">    [UIView animateWithDuration:.3 animations:^&#123;</span><br><span class="line">    CGPoint newCenter = self.center;</span><br><span class="line">    newCenter.x += point.x;</span><br><span class="line">    newCenter.y += point.y;</span><br><span class="line">    self.center = newCenter;</span><br><span class="line">    &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">- (void)scaleBy:(CGFloat) scale</span><br><span class="line">&#123;</span><br><span class="line">    if (scale &gt;0 &amp;&amp; scale != 1)</span><br><span class="line">    &#123;</span><br><span class="line">    [UIView animateWithDuration:.3 animations:^&#123;</span><br><span class="line">    CGRect newframe = self.frame;</span><br><span class="line">    newframe.size.width *= scale;</span><br><span class="line">    newframe.size.height *= scale;</span><br><span class="line">    self.frame = newframe;</span><br><span class="line">    &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/27/iOS控件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS控件</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2019 の小记
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
